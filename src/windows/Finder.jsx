@@ -11,11 +11,13 @@ const Finder = () => {
     const { activeLocations, setActiveLocation } = useLocationStore();
     const openItem = (item) => {
         if (item.fileType === "pdf") return openWindow('resume');
-        if (item.fileType === "folder") return setActiveLocation(item);
+        if (item.kind === "folder" || item.fileType === "folder") return setActiveLocation(item);
         if (['fig', 'url'].includes(item.fileType) && item.href) return window.open(item.href, "_blank");
 
 
-        openWindow(`${item.fileType}${item.kind}`, item)
+        if (item.fileType && item.kind) {
+            openWindow(`${item.fileType}${item.kind}`, item)
+        }
     };
 
     const renderList = (name, items) => (
@@ -46,7 +48,7 @@ const Finder = () => {
                 </div>
 
                 <ul className="content">
-                    {activeLocations?.children.map((item) => (
+                    {activeLocations?.children?.map((item) => (
                         <li key={item.id} className={item.position} onClick={() => openItem(item)}>
                             <img src={item.icon} alt={item.name} />
                             <p>{item.name}</p>
