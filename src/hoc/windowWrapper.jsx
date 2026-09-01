@@ -9,7 +9,7 @@ import { Draggable } from "gsap/all";
 const windowWrapper = (Component, windowKey) => {
     const Wrapped = (props) => {
         const { windows, focusWindow } = useWindowStore();
-        const { isOpen, zIndex } = windows[windowKey];
+        const { isOpen, zIndex } = windows[windowKey] || { isOpen: false, zIndex: 1000 };
         const ref = useRef(null);
 
         useGSAP(() => {
@@ -42,7 +42,14 @@ const windowWrapper = (Component, windowKey) => {
 
 
         return (
-            <section id={windowKey} ref={ref} style={{ zIndex }} className="absolute">
+            <section
+                id={windowKey}
+                ref={ref}
+                style={{ zIndex }}
+                className="absolute"
+                onMouseDown={() => focusWindow(windowKey)}
+                onTouchStart={() => focusWindow(windowKey)}
+            >
                 <Component {...props} />
             </section>
         );

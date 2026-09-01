@@ -24,8 +24,8 @@ const Finder = () => {
         <div>
             <h3>{name}</h3>
             <ul>
-                {items.map((item) =>
-                    <li key={item.id} onClick={() => setActiveLocation(item)} className={clsx(item.id === activeLocations.id ? "active" : "not-active")}>
+                {items?.map((item) =>
+                    <li key={item.id} onClick={() => setActiveLocation(item)} className={clsx(item.id === activeLocations?.id ? "active" : "not-active")}>
                         <img src={item.icon} className="w-4" alt={item.name} />
                         <p className="text-sm font-medium truncate">{item.name}</p>
                     </li>
@@ -44,7 +44,8 @@ const Finder = () => {
             <div className="bg-white flex h-full">
                 <div className="sidebar">
                     {renderList('Favourites', Object.values(locations))}
-                    {renderList('My Projects', locations.work.children)}
+                    {renderList('My Projects', locations.work?.children || [])}
+                    {locations.experience?.children && renderList('Experience', locations.experience.children)}
                 </div>
 
                 <ul className="content">

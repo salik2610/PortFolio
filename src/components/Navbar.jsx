@@ -1,19 +1,35 @@
 import dayjs from "dayjs";
 
-import { navLinks, navIcons } from "#constants";
+import { navLinks, navIcons, locations } from "#constants";
 import useWindowStore from "#store/window";
+import useLocationStore from "#store/location";
 
 const Navbar = () => {
     const { openWindow } = useWindowStore();
+    const { setActiveLocation } = useLocationStore();
+
+    const handleNavClick = (type) => {
+        if (type === "projects" || type === "finder") {
+            setActiveLocation(locations.work);
+            openWindow("finder");
+        } else if (type === "experience") {
+            const expFolder = locations.experience?.children?.[0] || locations.experience;
+            setActiveLocation(expFolder);
+            openWindow("finder");
+        } else {
+            openWindow(type);
+        }
+    };
+
     return (
         <nav>
             <div>
-                <img src="/images/logo.svg" />
+                <img src="/images/logo.svg" alt="logo" />
                 <p className="font-bold">Salik's Portfolio</p>
 
                 <ul>
                     {navLinks.map(({ id, name, type }) => (
-                        <li key={id} onClick={() => openWindow(type)}>
+                        <li key={id} onClick={() => handleNavClick(type)}>
                             <p>{name}</p>
                         </li>
                     ))}

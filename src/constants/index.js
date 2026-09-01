@@ -2,7 +2,12 @@ const navLinks = [
     {
         id: 1,
         name: "Projects",
-        type: "finder",
+        type: "projects",
+    },
+    {
+        id: 2,
+        name: "Experience",
+        type: "experience",
     },
     {
         id: 3,
@@ -215,7 +220,7 @@ export {
 };
 
 const WORK_LOCATION = {
-    id: 1,
+    id: "loc-work",
     type: "work",
     name: "Work",
     icon: "/icons/work.svg",
@@ -383,7 +388,7 @@ const WORK_LOCATION = {
 };
 
 const ABOUT_LOCATION = {
-    id: 2,
+    id: "loc-about",
     type: "about",
     name: "About me",
     icon: "/icons/info.svg",
@@ -436,7 +441,7 @@ const ABOUT_LOCATION = {
 };
 
 const RESUME_LOCATION = {
-    id: 3,
+    id: "loc-resume",
     type: "resume",
     name: "Resume",
     icon: "/icons/file.svg",
@@ -455,7 +460,7 @@ const RESUME_LOCATION = {
 };
 
 const TRASH_LOCATION = {
-    id: 4,
+    id: "loc-trash",
     type: "trash",
     name: "Trash",
     icon: "/icons/trash.svg",
@@ -482,8 +487,105 @@ const TRASH_LOCATION = {
     ],
 };
 
+const EXPERIENCE_LOCATION = {
+    id: "loc-experience",
+    type: "experience",
+    name: "Experience",
+    icon: "/icons/work.svg",
+    kind: "folder",
+    children: [
+        // ▶ Experience 1: CSIR NISCPR
+        {
+            id: 20,
+            name: "CSIR-NIScPR",
+            icon: "/images/folder.png",
+            kind: "folder",
+            position: "top-10 left-5",
+            windowPosition: "top-[10vh] left-5",
+            children: [
+                {
+                    id: 1,
+                    name: "Roles & Responsibilities.txt",
+                    icon: "/images/txt.png",
+                    kind: "file",
+                    fileType: "txt",
+                    position: "top-5 left-10",
+                    subtitle: "Research & Development Intern — CSIR NISCPR",
+                    description: [
+                        "Developed a ConvMixer-based Indian Sign Language recognition model achieving 92.87% accuracy, through preprocessing, augmentation, feature extraction, and classification.",
+                        "Researched Continuous Indian Sign Language Recognition (CISLR) by analyzing CNN, RNN, GRU and ConvMixer architectures.",
+                        "Evaluated public ISL datasets and existing methodologies, identifying key challenges in sign-language recognition.",
+                    ],
+                },
+                {
+                    id: 2,
+                    name: "LOR.png",
+                    icon: "/images/lor.png",
+                    kind: "file",
+                    fileType: "img",
+                    position: "top-52 left-80",
+                    imageUrl: "/images/lor.png",
+                },
+                // {
+                //     id: 3,
+                //     name: "GitHub Repository",
+                //     icon: "/icons/github.svg",
+                //     kind: "file",
+                //     fileType: "url",
+                //     href: "https://github.com/salik2610",
+                //     position: "top-10 right-20",
+                // },
+            ],
+        },
+
+        // ▶ Experience 2: Indraprastha Gas Limited
+        // {
+        //     id: 21,
+        //     name: "Indraprastha Gas Limited",
+        //     icon: "/images/folder.png",
+        //     kind: "folder",
+        //     position: "top-52 right-80",
+        //     windowPosition: "top-[25vh] left-7",
+        //     children: [
+        //         {
+        //             id: 1,
+        //             name: "Roles & Responsibilities.txt",
+        //             icon: "/images/txt.png",
+        //             kind: "file",
+        //             fileType: "txt",
+        //             position: "top-5 right-10",
+        //             subtitle: "Intern — Indraprastha Gas Limited (IGL)",
+        //             description: [
+        //                 "Worked on technical projects, process automation, and data tracking systems at Indraprastha Gas Limited (IGL).",
+        //                 "Assisted in analyzing operational workflows and developing software utilities for internal reporting.",
+        //             ],
+        //         },
+        //         {
+        //             id: 2,
+        //             name: "Certificate.png",
+        //             icon: "/images/image.png",
+        //             kind: "file",
+        //             fileType: "img",
+        //             position: "top-52 left-80",
+        //             imageUrl: "/images/project-2.png",
+        //         },
+        //         {
+        //             id: 3,
+        //             name: "GitHub Repository",
+        //             icon: "/icons/github.svg",
+        //             kind: "file",
+        //             fileType: "url",
+        //             href: "https://github.com/salik2610",
+        //             position: "top-20 left-20",
+        //         },
+        //     ],
+        // },
+    ],
+};
+
 export const locations = {
     work: WORK_LOCATION,
+    experience: EXPERIENCE_LOCATION,
     about: ABOUT_LOCATION,
     resume: RESUME_LOCATION,
     trash: TRASH_LOCATION,
