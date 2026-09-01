@@ -101,28 +101,28 @@ const dockApps = [
 
 const techStack = [
     {
-        category: "Frontend",
-        items: ["React.js", "JavaScript", "HTML", "CSS"],
+        category: "Programming Languages",
+        items: ["Java", "Python", "JavaScript"],
     },
     {
         category: "Styling",
         items: ["Tailwind CSS", "Bootstrap", "CSS"],
     },
     {
-        category: "Backend",
-        items: ["Java", "Node.js", "Express"],
+        category: "Technical Skills",
+        items: ["Data Structures & Algorithms (DSA)", "Object-Oriented Programming (OOP)", "Database Management", "Software Development", "Machine Learning", "Deep Learning"],
     },
     {
-        category: "Database",
-        items: ["MongoDB", "MySQL"],
+        category: "Frameworks & Libraries",
+        items: ["React", "Node.js", "Tailwind CSS", "CNN", "Keras", "TensorFlow"],
     },
     {
         category: "Dev Tools",
-        items: ["Git", "GitHub", "VScode", "Claude"],
+        items: ["Git", "GitHub", "VScode", "Antigravity"],
     },
     {
-        category: "CS fundamentals",
-        items: ["Data Structures", "Algorithms", "Operating Systems", "Database Management Systems", "Computer Networks"],
+        category: "Tools & Platform",
+        items: ["Git", "GitHub", "MySQL", "Claude", "MS Office", "Excel"],
     },
 ];
 
