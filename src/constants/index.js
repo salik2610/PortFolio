@@ -104,10 +104,10 @@ const techStack = [
         category: "Programming Languages",
         items: ["Java", "Python", "JavaScript"],
     },
-    {
-        category: "Styling",
-        items: ["Tailwind CSS", "Bootstrap", "CSS"],
-    },
+    // {
+    //     category: "Styling",
+    //     items: ["Tailwind CSS", "Bootstrap", "CSS"],
+    // },
     {
         category: "Technical Skills",
         items: ["Data Structures & Algorithms (DSA)", "Object-Oriented Programming (OOP)", "Database Management", "Software Development", "Machine Learning", "Deep Learning"],
